@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultoría Estratégica y Datos</title>
+    <style>
+        /* ==================== ESTILOS GENERALES (CSS) ==================== */
+        :root {
+    --azul-oscuro: #1F4E78; /* Cambia este por tu color principal */
+    --azul-claro: #2A6B9E;  /* Cambia este por tu color secundario */
+    --gris-fondo: #F4F7F6;
+    --texto-principal: #333333;
+}
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--texto-principal);
+            background-color: var(--gris-fondo);
+        }
+
+        header {
+            background-color: white;
+            padding: 20px 50px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            color: var(--azul-oscuro);
+            font-size: 24px;
+        }
+
+        /* ==================== SECCIÓN HERO ==================== */
+        .hero {
+            background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul-claro) 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+
+        .btn-principal {
+            background-color: white;
+            color: var(--azul-oscuro);
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+
+        .btn-principal:hover {
+            background-color: #f0f0f0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        /* ==================== SERVICIOS ==================== */
+        .servicios {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .tarjeta-servicio {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            width: 300px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            border-top: 4px solid var(--azul-oscuro);
+        }
+
+        /* ==================== FORMULARIO DE CONTACTO ==================== */
+        .seccion-contacto {
+            background-color: white;
+            padding: 60px 20px;
+            margin-bottom: 40px;
+        }
+
+        .formulario-contenedor {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--gris-fondo);
+            padding: 40px;
+            border-radius: 10px;
+        }
+
+        .grupo-input {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .grupo-input label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: var(--azul-oscuro);
+        }
+
+        .grupo-input input, .grupo-input select, .grupo-input textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+
+        #mensaje-exito {
+            display: none;
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVEGACIÓN -->
+    <header>
+        <img src="mi_logo.png" alt="Logo Consultoría" style="height: 50px;">
+        <nav>
+            <a href="#contacto" class="btn-principal" style="padding: 10px 20px;">Agendar Asesoría</a>
+        </nav>
+    </header>
+
+    <!-- SECCIÓN PRINCIPAL -->
+    <section class="hero">
+      <h2>Transformamos datos en decisiones estratégicas</h2>
+<p>Consultoría especializada en el análisis de información y la planificación institucional...</p>
+        <a href="#contacto" class="btn-principal">Solicitar Diagnóstico</a>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="servicios">
+        <div class="tarjeta-servicio">
+            <h3 style="color: var(--azul-oscuro);">Análisis de Datos</h3>
+            <p>Estructuración y análisis estadístico de grandes volúmenes de información para identificar áreas de oportunidad.</p>
+        </div>
+        <div class="tarjeta-servicio">
+            <h3 style="color: var(--azul-oscuro);">Estrategia Institucional</h3>
+            <p>Diseño de planes de acción y optimización de procesos orientados al cumplimiento de objetivos a largo plazo.</p>
+        </div>
+        <div class="tarjeta-servicio">
+            <h3 style="color: var(--azul-oscuro);">Reportes Dinámicos</h3>
+            <p>Desarrollo de tableros de control (dashboards) en tiempo real para el monitoreo de indicadores clave (KPIs).</p>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="seccion-contacto">
+        <div class="formulario-contenedor">
+            <h2 style="text-align: center; color: var(--azul-oscuro);">Inicie su transformación hoy</h2>
+            <p style="text-align: center; margin-bottom: 30px;">Complete el formulario y nos pondremos en contacto para estructurar su proyecto.</p>
+            
+            <div id="mensaje-exito">¡Su solicitud ha sido enviada con éxito! Nos comunicaremos pronto.</div>
+
+            <form id="formularioConsultoria">
+                <div class="grupo-input">
+                    <label for="nombre">Nombre Completo</label>
+                    <input type="text" id="nombre" required placeholder="Ej. Lic. Ana Ruiz">
+                </div>
+                <div class="grupo-input">
+                    <label for="correo">Correo Electrónico</label>
+                    <input type="email" id="correo" required placeholder="correo@institucion.com">
+                </div>
+                <div class="grupo-input">
+                    <label for="institucion_o_empresa">Institución o Empresa</label>
+                    <input type="text" id="institucion_o_empresa" required placeholder="Nombre de su organización">
+                </div>
+                <div class="grupo-input">
+                    <label for="servicio_interes">Servicio de Interés</label>
+                    <select id="servicio_interes" required>
+                        <option value="">Seleccione una opción...</option>
+                        <option value="Análisis de Datos">Análisis y Procesamiento de Datos</option>
+                        <option value="Estrategia Institucional">Estrategia y Planificación Institucional</option>
+                        <option value="Reportes Dinámicos">Desarrollo de Dashboards (KPIs)</option>
+                        <option value="Otro">Otro requerimiento</option>
+                    </select>
+                </div>
+                <div class="grupo-input">
+                    <label for="mensaje">Describa brevemente su requerimiento</label>
+                    <textarea id="mensaje" rows="4" required placeholder="¿En qué podemos ayudarle?"></textarea>
+                </div>
+                <button type="submit" class="btn-principal" style="width: 100%; background-color: var(--azul-oscuro); color: white;">Enviar Solicitud</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ==================== LOGICA DE CONEXIÓN (JAVASCRIPT) ==================== -->
+    <script>
+        document.getElementById('formularioConsultoria').addEventListener('submit', async function(event) {
+            event.preventDefault(); // Evita que la página se recargue
+
+            // 1. Recolectar los datos del formulario (deben coincidir con el modelo de FastAPI)
+            const datosFormulario = {
+                nombre: document.getElementById('nombre').value,
+                correo: document.getElementById('correo').value,
+                institucion_o_empresa: document.getElementById('institucion_o_empresa').value,
+                servicio_interes: document.getElementById('servicio_interes').value,
+                mensaje: document.getElementById('mensaje').value
+            };
+
+            try {
+                // 2. Enviar los datos al servidor backend (FastAPI)
+                // IMPORTANTE: Asegúrate de que tu servidor FastAPI (uvicorn main:app --reload) esté corriendo
+                const respuesta = await fetch('http://127.0.0.1:8000/api/contacto', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(datosFormulario)
+                });
+
+                if (respuesta.ok) {
+                    // Mostrar mensaje de éxito y limpiar formulario
+                    document.getElementById('mensaje-exito').style.display = 'block';
+                    document.getElementById('formularioConsultoria').reset();
+                    
+                    // Ocultar mensaje después de 5 segundos
+                    setTimeout(() => {
+                        document.getElementById('mensaje-exito').style.display = 'none';
+                    }, 5000);
+                } else {
+                    alert("Hubo un error al registrar los datos. Verifique su información.");
+                }
+            } catch (error) {
+                console.error("Error de conexión:", error);
+                alert("Error al conectar con el servidor. ¿Está FastAPI encendido?");
+            }
+        });
+    </script>
+</body>
+</html>
