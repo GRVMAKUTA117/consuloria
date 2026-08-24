@@ -143,10 +143,19 @@
 </head>
 <body>
 
-    <!-- NAVEGACIÓN -->
+    <!-- NAVEGACIÓN (AQUÍ SE AGREGÓ EL BOTÓN DE MÚSICA) -->
     <header>
         <img src="mi_logo.png" alt="Logo Consultoría" style="height: 50px;">
-        <nav>
+        <nav style="display: flex; gap: 15px; align-items: center;">
+            
+            <!-- Etiqueta de audio oculta -->
+            <audio id="musicaFondo" loop>
+                <source src="musica_fondo.mp3" type="audio/mpeg">
+            </audio>
+            
+            <!-- Botón para controlar la música -->
+            <button id="btnMusica" class="btn-principal" style="padding: 10px 20px; background-color: var(--gris-fondo); color: var(--azul-oscuro);">🎵 Activar Sonido</button>
+            
             <a href="#contacto" class="btn-principal" style="padding: 10px 20px;">Agendar Asesoría</a>
         </nav>
     </header>
@@ -254,6 +263,23 @@
             } catch (error) {
                 console.error("Error de conexión:", error);
                 alert("Error al conectar con el servidor. ¿Está FastAPI encendido?");
+            }
+        });
+    </script>
+
+    <!-- ==================== LÓGICA DE LA MÚSICA (AQUÍ SE AGREGÓ EL CÓDIGO FINAL) ==================== -->
+    <script>
+        const audio = document.getElementById('musicaFondo');
+        const btnMusica = document.getElementById('btnMusica');
+
+        btnMusica.addEventListener('click', function() {
+            if (audio.paused) {
+                audio.play();
+                audio.volume = 0.3; // Volumen suave al 30%
+                btnMusica.innerText = "🔊 Pausar Sonido";
+            } else {
+                audio.pause();
+                btnMusica.innerText = "🎵 Activar Sonido";
             }
         });
     </script>
